@@ -1,0 +1,210 @@
+Node.js Basics 
+.What is Node.js, and how does it differ from traditional server-side languages?
+
+A. Node is an External runtime environment that is not dependent on browsers, however others depend on browsers, also use to develop backend services known as Api's.
+
+
+
+.Explain the event-driven, non-blocking I/O model in Node.js.
+.How do you handle asynchronous operations in Node.js?
+
+Advanced JavaScript 
+.What is the difference between let, const, and var in JavaScript? Provide examples.
+
+A.  Let is functional Scoped and can't be accessed outside of the block of a function.
+let can't be redeclared or re-initialized/assigned in its scope.
+
+function abc (){
+    let abcd=6 
+   
+   console.log(abcd)
+}
+abc();
+
+const  is also a functional Scoped and can't be accessed outside of the block of a function.
+const can't be redeclared its scope.
+
+function abc (){
+    const abcd=6 
+    
+   console.log(abcd)
+}
+abc();
+
+howwever var is a globally scoped variable and can be accessed globally and it does not depends on a block scope.
+
+.Explain the concept of closures in JavaScript and provide an example.
+
+Closures are a nested function in a function. 
+function abc (x){
+
+function add(y){
+   let result= x+y;
+   return result 
+}return add
+}
+abc(3)(4); where which inner function can be called in this manner 
+
+.Differentiate between null and undefined in JavaScript.
+
+null is an empty object, array, variable where as undefined is where the variable is just initialized 
+undefined
+
+let abc ;
+console.log (abc)
+
+null
+
+let abc = [];
+console.log (abc)
+
+
+.What is the purpose of the this keyword in JavaScript?
+
+this keyword refers to an object of the parent function.
+
+function abc (name, call){
+this.name=aun;
+this.call=welcome;
+return `${call} ${name}'
+}
+abc();
+
+
+ES6 Features
+.Describe the new features introduced in ES6 for variable declarations (e.g., let, const).
+
+let and const are function or block scoped variable declarations and they cant be accessed outside of the block.
+function abc (){
+    const abcd=6 
+    
+   console.log(abcd)
+}
+abc();
+
+.Explain the arrow function syntax and provide an example.
+    let abc=[1,2,3,4,5]
+   abc.reduce(()=>{
+    let result1 = abc.reduce( (acc, num) => acc + num, 0);
+   console.log(result1)
+   })
+Here in the above eg abc.reduce has been used in a arrow function that is 
+Reduce()=>{
+} we need not to write function key word in an arrow function 
+.What are template literals in ES6, and how do they differ from traditional string concatenation?
+Let abc=’ali’;
+Let age=55;
+Console.log(`${abc} is ${age) years old’ )
+
+In template literals we don’t have to write + sign again and again in order to concatenate rater we use ${} and backticks `` in starting and end of the statement as shown in the above eg.
+
+Promises and Destructuring
+.Explain the purpose of Promises in JavaScript. Provide a simple example demonstrating the use of Promises.
+function add(...x) {
+    return new Promise(function(resolve, reject) {
+       
+            let result = x.reduce( (acc, num) => acc + num, 0);
+            resolve(result);
+       
+       
+
+    });
+}
+
+function sub(add, ...y) {
+    return new Promise(function(resolve, reject) {
+       
+            let result1 = y.reduce ( (add, num) => add - num, add);
+            resolve(result1);
+ 
+      
+
+    });
+}
+async function allpro2 (){
+    let additionnew = await add (5,6,8,7,5,8,5,6,8,6)
+    setTimeout(()=>{
+    console.log("sum = "+ additionnew);
+},5000)
+    let subtractionnew = await sub (5,6,2,8,6,8)
+    setTimeout(()=>{
+    console.log("sub = "+ subtractionnew);
+},3000)
+}
+
+allpro2 ()
+here in the above eg : we have created 2 functions add and sub and then we have created an async function that’s declares a promise to perform a task on whatever time is setted in the settime out or it takes (eg in fetching an api) in the above eg  the sub function is performing first and add is performing 2nd as we have used async await. Had it been a normal function first it would have run the sum function after 5 secs and the after another 3 sec it would have runned the sub function but here with the span of 5 secs both the functions are runned.  
+
+
+.Describe the concept of destructuring in JavaScript. Provide an example involving an object and an array.
+
+Destructring is breaking the elements of an array/ object into a prescribed variable.
+For eg :
+Let abc=[1,2,3]
+Console.log(abc[0]) // output = 1
+
+DE structuring=
+ const abc = [ value1, value2, value3] =[1,2,3]
+console.log(abc.value1) // output =1 
+same can be done with an object.
+
+
+Prototype and ES6 Classes 
+.What is the prototype chain in JavaScript? How does it relate to inheritance?
+Prototype chain refers to defining the parameters within the function it self. 
+For eg : 
+Function employee (name, age){
+{ this.name=”Aun”;
+this.age=16;}
+let result = console.log( ` ${name} ‘s age is ${age}	)
+return result
+}
+Employee()
+.Define and demonstrate the use of classes in ES6.
+Use of classes are done through a constructor that is initialized first. 
+Class employee {
+Constructor(name, age)
+{
+This.name=Name;
+This.age=Empage;
+}
+Emp1(){
+Return 	`${this.Name}’
+}
+Const myempl1 =new employee(“hello”, “Ali”);
+Console.log(myemp1.emp1())
+
+Express.js and EJS 
+.What is Express.js, and how does it simplify building web applications with Node.js?
+Express is a node.js framework  that helps manage servers and routes. In a node application 
+
+.Explain the role of middleware in Express.js. Provide an example.
+
+A request handler with access to application request in an express server.
+
+.How do you render dynamic content using EJS in an Express.js application? Provide a code snippet.
+Install ejs
+After installing we will render it, express ejs view we will add in the file (views folder is important to make)
+Node modules:
+{“type”: “module”}
+
+Import express from ‘express’
+Const app=express();
+Const port=3000;
+App.set(“view engine, ejs’);
+App.get(‘/about’ , function (req, res) {
+Res.render(‘pages/about’);
+});
+App.listen(port, function(){
+console.log(“server has run”);
+app.listen(port, function(){
+console.log(“abc”)
+})
+
+})
+
+
+
+
+Code Section
+.Make a login page which shows error when you enter and incorrect password and display "Welcome note with its user and password"
